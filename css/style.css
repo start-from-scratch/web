@@ -1,0 +1,101 @@
+/* Styling du menu de navigation */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;   
+    text-align: center;
+}
+
+        /* Style du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+        
+table, th, td {
+    border: 0px ;
+    padding: 1%;
+    text-align: center;
+}
+        
+th {
+    background-color: white;
+}
+
+        /* Style des images */
+.image {
+    width: 50%;
+    height: 50%;
+    border-radius: 5%;
+}
+
+.image_presentation {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit:cover;
+}
+
+        /* Style du formulaire */
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.form input {
+    margin-bottom: 1%;
+    padding: 8px;
+    font-size: 100%;
+}
+
+.form button {
+    padding: 10px 20px;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+        /* Style de la liste */
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list li {
+     margin-bottom: 1%; /* Ajusté de 10px à un pourcentage */
+}
+
+        /* Style de la barre en bas de la page */
+.footer {
+    overflow: hidden;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1% 0; /* Ajusté de 10px à un pourcentage */
+    justify-content: center;
+    margin: 0.5% 0; /* Ajusté de 5px à un pourcentage */      
+}
+
+/* Style pour les boutons */
+.button {
+    padding: 1% 2%; /* Ajusté de 10px 20px à un pourcentage */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 1%; /* Ajusté de 10px à un pourcentage */
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+iframe {/* permet que les widgts soient mis a la taille du lecteur d'ecran */
+    width: 90%;
+    height: 100vh; /* Utilisez 100vh pour que la hauteur soit égale à la hauteur de la fenêtre */
+}
+
+#pub {
+    text-align:left;
+}

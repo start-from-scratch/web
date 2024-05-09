@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #333;
+    font-size: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    top: 0;
+}
+
+.navbar li {
+    list-style-type: none;
+    font-size: 18px;
+    display: grid;
+    margin: 0;
+}
+
+.navbar li a {
+    text-decoration: none;
+    padding-block: 8px;
+    display: grid;
+    width: 100%;
+    color: #f2f2f2;
+}
+        
+.navbar li a:hover {
+    background-color: #f2f2f2;
+    transition: 0.1s;
+    color: #333;
+}
+
+/* desktop */
+@media only screen and (min-width: 768px) {
+    .navbar li, .navbar li a {
+        display: inline-block;
+    }
+
+    .navbar li a {
+        padding-inline: 16px;
+        display: inline-block;
+        width: auto;
+    }
+}

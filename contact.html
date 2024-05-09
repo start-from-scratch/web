@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type= "text/css" href="css/navbar.css" meta charset="utf-8"/>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="asset\PixelBot.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site Officiel de l'equipe 'Pixel'">
+    <title>PixelWeb</title>
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <ul class="navbar">
+		<li><a href="index.html">Accueil</a></li>
+		<li><a href="projets.html">Projets</a></li>
+		<li><a href="partenaires.html">Partenaires</a></li>
+		<li><a href="contact.html">Contacts</a></li>
+	</ul>
+
+    <h2>Page 4</h2>
+    <p>Cette page affiche un formulaire de contact.</p>
+    <div class="form">
+        <input type="text" id="name" placeholder="Nom">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="message" placeholder="Message"></textarea>
+        <button onclick="sendForm()">Envoyer</button>
+    </div>
+
+    <!-- Barre en bas de la page -->
+    <div class="footer">
+        <p>Informations supplémentaires ou lien vers les réseaux sociaux peuvent être placés ici.</p>
+    </div>
+
+    <script>
+        function sendForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Envoi du mail
+            var emailBody = "Nom : " + name + "\r\n" + "Email : " + email + "\r\n" + "Message : " + message;
+            var emailLink = "mailto:loyds442@gmail.com?subject=Contact Form&body=" + encodeURIComponent(emailBody);
+            window.location.href = emailLink;
+
+            console.log("Mail envoyé avec succès");
+
+            // Envoi du webhook
+            var webhookUrl = "https://discord.com/api/webhooks/1236644910082293810/vyFmuZChiRcrJPySUH7sakvp-1Ml2ZncKW1mkTxviu8VjSmyhKAhAe3MBK0xC1vcKy_B"; // Remplacez ceci par votre URL de webhook Discord
+            var webhookData = {
+                username: "Webhook Notification",
+                avatar_url: "",
+                content: `<@&1236645240186736675> \n Nouveau message de ${name} (${email}): ${message}`
+            };
+
+            fetch(webhookUrl, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(webhookData)
+            })
+            .then(response => {
+                console.log('Webhook sent successfully');
+            })
+            .catch(error => {
+                console.error('Error sending webhook', error);
+                console.log('Erreur lors de l\'envoi du webhook :', error);
+            });
+        }
+    </script>
+</body>
+</html>
